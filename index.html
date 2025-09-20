@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediGuard AI - Your Personal Health Assistant</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <i class="fas fa-heartbeat"></i>
+        <h1>MediGuard AI</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#" id="login-btn">Login</a></li>
+          <li><a href="#" id="signup-btn">Sign Up</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h2>Your Personal AI Health Assistant</h2>
+          <p>Get personalized medication insights based on your health profile</p>
+        </div>
+      </section>
+
+      <section class="chat-section">
+        <div class="chat-container">
+          <div class="chat-header">
+            <div class="chat-header-left">
+              <i class="fas fa-robot"></i>
+              <h3>MediGuard AI Assistant</h3>
+            </div>
+            <div class="chat-header-right">
+              <div class="status-indicator">
+                <span class="dot"></span>
+                <span>Online</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">
+              <div class="message-avatar">
+                <i class="fas fa-heartbeat"></i>
+              </div>
+              <div class="message-content">
+                <div class="message-header">
+                  <span class="message-sender">MediGuard AI</span>
+                  <span class="message-time">Now</span>
+                </div>
+                <p>Hello! I'm your MediGuard AI assistant. I can help you understand potential side effects of medications based on your personal health profile. Let's get started!</p>
+              </div>
+            </div>
+            <div class="message bot-message">
+              <div class="message-avatar">
+                <i class="fas fa-heartbeat"></i>
+              </div>
+              <div class="message-content">
+                <div class="message-header">
+                  <span class="message-sender">MediGuard AI</span>
+                  <span class="message-time">Now</span>
+                </div>
+                <p>First, could you please provide some information about yourself?</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="user-input-section">
+            <div class="user-form" id="user-form">
+              <div class="form-section">
+                <h4>Your Personal Information</h4>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="user-name">Full Name</label>
+                    <input type="text" id="user-name" placeholder="Enter your full name">
+                  </div>
+                  <div class="form-group">
+                    <label for="user-age">Age</label>
+                    <input type="number" id="user-age" placeholder="Enter your age">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="user-weight">Weight (kg)</label>
+                    <input type="number" id="user-weight" placeholder="Enter your weight in kilograms">
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-section">
+                <h4>Medical History</h4>
+                <div class="form-group full-width">
+                  <label for="med-history">Current Medications & Conditions</label>
+                  <textarea id="med-history" rows="3" placeholder="List any medications you're taking, diseases you have, or other medical conditions (e.g., hypertension, diabetes, taking aspirin daily)"></textarea>
+                </div>
+              </div>
+              
+              <div class="form-section">
+                <h4>Allergies</h4>
+                <div class="form-group full-width">
+                  <label for="allergies">Known Allergies</label>
+                  <textarea id="allergies" rows="2" placeholder="List any known allergies (e.g., penicillin, peanuts, latex) or write 'None' if applicable"></textarea>
+                </div>
+              </div>
+              
+              <div class="form-section">
+                <h4>Medication Inquiry</h4>
+                <div class="form-group full-width">
+                  <label for="medication-query">Which medication would you like to know about?</label>
+                  <div class="input-with-button">
+                    <input type="text" id="medication-query" placeholder="Enter medication name (e.g., Ibuprofen, Amoxicillin, Metformin)">
+                    <button id="submit-btn" class="btn-primary">Analyze <i class="fas fa-paper-plane"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="chat-input-container" id="chat-input-container" style="display: none;">
+            <div class="chat-input-wrapper">
+              <input type="text" id="chat-input" placeholder="Ask me anything about medications...">
+              <button id="send-message-btn" class="send-btn">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2023 MediGuard AI. All rights reserved. This site is for demonstration purposes only.</p>
+      <p><small>Disclaimer: The information provided is for educational purposes only and should not replace professional medical advice.</small></p>
+    </footer>
+  </div>
+
+  <!-- Modal for Login/Signup -->
+  <div class="modal" id="auth-modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3 id="modal-title">Login</h3>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        <button id="auth-submit" class="btn-primary">Continue</button>
+        <p class="switch-auth">Don't have an account? <a href="#" id="switch-auth">Sign Up</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay for modal -->
+  <div class="overlay" id="overlay"></div>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
